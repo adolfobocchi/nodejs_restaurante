@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Canes - Restaurante</title>
+        <link rel="stylesheet" href="css/style.css" />
+        <script src="js/jquery-3.6.3.min.js"></script>
+        <link rel="icon" type="image/png" href="images/favicon.png" />
+    </head>
+    <body>
+    <div class="container">
+        <form method="POST" action="/painel">
+            <div style="overflow-x:auto;">
+                <table id="table_form">
+                    <tr>
+                        <th>id</th>
+                        <th>nome</th>
+                        <th>ingredientes</th>
+                        <th>rendimento</th>
+                        <th>categoria</th>
+                        <th>imagem</th>
+                        <th></th>
+                    </tr>
+                    {{#prato}}
+                    <tr>
+                        <td><input type="hidden" id="id" name="id" value="{{id}}" /> <span>{{id}}</span></td>
+                        <!-- <td><input type="text" id="id" name="id" value="{{id}}" readonly="readonly" /> -->
+                        <td><input type="text" id="nome" name="nome" value="{{nome}}"/></td>
+                        <td><input type="text" id="ingredientes" name="ingredientes" value="{{ingredientes}}" /></td>
+                        <td><input type="text" id="rendimento" name="rendimento" value="{{rendimento}}" /></td>
+                        <td><input type="text" id="categoria" name="categoria" value="{{categoria}}" /></td>
+                        <td><input type="file" id="img" name="img"  /></td>
+                        <td><input type="submit" /></td>
+                    </tr>
+                    {{/prato}}
+        
+                </table>
+            </div>
+        </form>
+
+        <div class="mensagem-area" id="mensagem"></div>
+        <header>
+                <form method="GET" action="/painel">
+                    <input type="search" name="q" placeholder="Pesquise sua comida favorita" />
+                </form>
+        </header>
+
+        <div id="content" style="overflow-x:auto;">
+            <table id="tabela">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>nome</th>
+                        <th>ingredientes</th>
+                        <th>rendimento</th>
+                        <th>categoria</th>
+                        <th>imagem</th>
+                        <th>opções</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#dados}}
+                    <tr>
+                        <td>
+                            {{id}}
+                        </td>
+                        <td>
+                            <div class="item--name nome">{{nome}}</div></td>
+                        <td>
+                            <div class="item--ing ingredientes">{{ingredientes}}</div></td>
+                        <td>
+                            <div class="item--rend rendimento">Rendimento:  <span>{{rendimento}} </span> pessoas</div>
+                        </td>
+                        <td>
+                            <div class="item--cat categoria">Categoria: <span>{{categoria}}</span></div>
+                        </td>
+                        <td><img src="images/{{img}}" class="item--image img" /></td>
+                        <td>
+                            <a class="btn-editar" data-id="{{id}}" >Editar</a>
+                        </td>
+                        <td>
+                            <a class="btn-excluir" data-id="{{id}}" >Excluir</a>
+                        </td>   
+                    </tr>
+                    {{/dados}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

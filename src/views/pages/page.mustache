@@ -1,0 +1,28 @@
+{{>partials/header}}
+
+{{#banner}}
+<section class="banner" style="background-image: url('images/{{background}}')">{{title}}</section>
+{{/banner}}
+
+<div class="container list">
+    {{#dados}}
+        <div class="item">
+        <img src="images/{{img}}" class="item--image" />
+        <div class="item--name">{{nome}}</div>
+        <div class="item--ing">{{ingredientes}}</div>
+        <div class="item--rend">Rendimento: {{rendimento}} pessoas</div>
+        <div class="item--cat">Categoria: {{categoria}}</div>
+    </div>
+    {{/dados}}
+</div>
+
+
+{{^dados}}
+<div class="container no-list">
+<h2>ainda não estamos preparando pratos para sua busca!<h2>
+<h2>tente outro para matar a sua fome</h2>
+</div>
+{{/dados}}
+
+
+{{>partials/footer}}
