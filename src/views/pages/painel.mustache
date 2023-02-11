@@ -10,6 +10,14 @@
     </head>
     <body>
     <div class="container">
+        <header >
+                <div class="container">
+                <form method="GET" action="/painel">
+                    <input type="search" name="q" placeholder="Pesquise sua comida favorita" />
+                </form>
+                <a href="/logout">Sair</a>
+                </div>
+        </header>
         <form method="POST" action="/painel">
             <div style="overflow-x:auto;">
                 <table id="table_form">
@@ -40,11 +48,7 @@
         </form>
 
         <div class="mensagem-area" id="mensagem"></div>
-        <header>
-                <form method="GET" action="/painel">
-                    <input type="search" name="q" placeholder="Pesquise sua comida favorita" />
-                </form>
-        </header>
+        
 
         <div id="content" style="overflow-x:auto;">
             <table id="tabela">
@@ -89,5 +93,6 @@
         </div>
     </div>
     <script src="js/script.js"></script>
+    <script src="js/interceptor.js"></script>
 </body>
 </html>

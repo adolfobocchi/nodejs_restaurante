@@ -1,11 +1,9 @@
-$(document).ready(function(){
-    
-    /*
-    * val() - pega os valores dos input
-    * event.currentTarguet() - pega o proprio objeto
-    * closest() - pega o elemento mais proximo do objeto
-    * */
-    
+
+
+
+$(document).ready(function(){ 
+
+   
     function fetchGetDelete(id) {
         var mensagem = $('#mensagem');
         $.ajax({
@@ -13,9 +11,9 @@ $(document).ready(function(){
             type: 'get', //get
             //data: form_cadastro.serialize(),
             data: 'id='+id,
-            beforeSend: function () {
+            
+            beforeSend: function (xhr) {
                 mensagem.html('Excluindo prato!');
-                //pode chamar modal com progressbar
             },
             success:function (data) {
                 location.reload();
@@ -24,7 +22,6 @@ $(document).ready(function(){
             }
         })
     }
-    
 
 
     $('tbody').on('click', '.btn-editar', function (event) {
@@ -50,8 +47,6 @@ $(document).ready(function(){
     
     });
 
-    
-    
 
     $('tbody').on('click', '.btn-excluir', function (event) {
         event.preventDefault();
@@ -61,6 +56,7 @@ $(document).ready(function(){
         }
         
     });
+
    
 });
 

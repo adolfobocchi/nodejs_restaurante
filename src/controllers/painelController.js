@@ -30,7 +30,6 @@ export const painel = async (req, res) => {
 
 export const gravar_prato = async (req, res) => {
     let {id,nome,ingredientes,rendimento,categoria} = req.body;
-    console.log(id)
     if(parseInt(id) > 0) {
         console.log(id)
         await Prato.update({

@@ -1,4 +1,5 @@
 import express from 'express';
+import session from 'express-session';
 import dotenv from 'dotenv';
 import mustache from 'mustache-express'
 import path from 'path'
@@ -19,6 +20,13 @@ server.engine('mustache', mustache());
 
 server.use(express.static(path.join(__dirname, '../public')));
 server.use(express.urlencoded({ extended: true }));
+
+server.use(session({
+    secret: 'C4N3$KEY',
+    resave: false,
+    secure: false,
+    saveUninitialized: false
+}));
 
 server.use(rotas)
 
