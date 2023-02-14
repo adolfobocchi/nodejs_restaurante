@@ -1,8 +1,8 @@
 import express from 'express';
 import session from 'express-session';
 import dotenv from 'dotenv';
-import mustache from 'mustache-express'
-import path from 'path'
+import mustache from 'mustache-express';
+import path from 'path';
 import { fileURLToPath } from 'url';
 import rotas from './routes/index.js';
 
@@ -27,6 +27,8 @@ server.use(session({
     secure: false,
     saveUninitialized: false
 }));
+
+
 
 server.use(rotas)
 

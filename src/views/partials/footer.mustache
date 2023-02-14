@@ -1,4 +1,14 @@
-<footer class="container">
+<footer >
+    <div class="container">
+        <form id="form-contato" method="POST" action="/contato">
+            <input type="email" name="email" id="email" placeholder="digite aqui seu email" />
+            <input type="text" name="nome" id="nome" placeholder="digite aqui seu nome"/>
+            <input type="text" name="assunto" id="assunto" placeholder="digite aqui seu assunto"/>
+            <textarea rows="10" name="mensagem" id="mensagem" ></textarea>
+            <input type="submit" id="btn-login" value="enviar" />
+        </form>
+        
+    </div>
     Feito com ❤ para a turma TII 3
 </footer>
 <script src="js/interceptor.js"></script>

@@ -29,14 +29,17 @@ export const painel = async (req, res) => {
 }
 
 export const gravar_prato = async (req, res) => {
-    let {id,nome,ingredientes,rendimento,categoria} = req.body;
+    let {id,nome,ingredientes,rendimento,categoria,img} = req.body;
+    if(req.file) {
+        img = req.file.filename;
+    }
     if(parseInt(id) > 0) {
-        console.log(id)
         await Prato.update({
             nome,
             ingredientes,
             rendimento,
-            categoria
+            categoria,
+            img
         },{
             where: {id}
         });
@@ -46,7 +49,7 @@ export const gravar_prato = async (req, res) => {
         prato.ingredientes = ingredientes;
         prato.rendimento = rendimento;
         prato.categoria = categoria;
-
+        prato.img = img;
         await prato.save();
     }
     res.redirect('/painel');

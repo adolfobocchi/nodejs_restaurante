@@ -18,7 +18,7 @@
                 <a href="/logout">Sair</a>
                 </div>
         </header>
-        <form method="POST" action="/painel">
+        <form method="POST" action="/painel" enctype="multipart/form-data">
             <div style="overflow-x:auto;">
                 <table id="table_form">
                     <tr>
@@ -64,6 +64,7 @@
                     </tr>
                 </thead>
                 <tbody>
+                    {{dados.lenght}}
                     {{#dados}}
                     <tr>
                         <td>

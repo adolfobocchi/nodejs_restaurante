@@ -57,7 +57,7 @@ export const saladas = async (req, res) => {
         },
         banner: {
             title: 'Saladas',
-            background: 'bg-carnes.jpg'
+            background: 'bg-saladas.webp'
         },
         dados
     });
@@ -76,7 +76,7 @@ export const bebidas = async (req, res) => {
         },
         banner: {
             title: 'Bebidas',
-            background: 'bg-carnes.jpg'
+            background: 'bg-bebidas.jpg'
         },
         dados
     });
